@@ -28,7 +28,7 @@ namespace BirthdayReminder
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-			var controller = new RootViewController ();
+			var controller = new BirthdayListViewController();
 			navigationController = new UINavigationController (controller);
 			window.RootViewController = navigationController;
 

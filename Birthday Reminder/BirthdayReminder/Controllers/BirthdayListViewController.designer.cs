@@ -8,8 +8,8 @@ using MonoTouch.Foundation;
 
 namespace BirthdayReminder
 {
-	[Register ("RootViewController")]
-	partial class RootViewController
+	[Register ("BirthdayListViewController")]
+	partial class BirthdayListViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{

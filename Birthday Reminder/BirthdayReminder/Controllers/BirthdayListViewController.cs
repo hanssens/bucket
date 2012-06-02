@@ -8,10 +8,10 @@ using MonoTouch.Foundation;
 
 namespace BirthdayReminder
 {
-	public partial class RootViewController : UITableViewController
+	public partial class BirthdayListViewController : UITableViewController
 	{
 		
-		public RootViewController () : base ("RootViewController", null)
+		public BirthdayListViewController () : base ("BirthdayListViewController", null)
 		{
 			// Custom initialization
 		}
@@ -54,14 +54,14 @@ namespace BirthdayReminder
 		class DataSource : UITableViewSource
 		{
 			static NSString cellIdentifier = new NSString ("CellId");
-			RootViewController controller;
+			BirthdayListViewController controller;
 
 			public List<Birthday> _Birthdays {
 				get;
 				set;
 			}
 			
-			public DataSource (RootViewController controller)
+			public DataSource (BirthdayListViewController controller)
 			{
 				this.controller = controller;
 				
@@ -144,8 +144,8 @@ namespace BirthdayReminder
 				// Fetch the selected item from the list of _Birthdays
 				var model = _Birthdays[indexPath.Row];
 				
-				// ... and inject it into a new DetailViewController instance
-				var detailController = new DetailViewController (model);
+				// ... and inject it into a new BirthdayDetailViewController instance
+				var detailController = new BirthdayDetailViewController (model);
 				
 				// Pass the selected object to the new view controller.
 				controller.NavigationController.PushViewController (

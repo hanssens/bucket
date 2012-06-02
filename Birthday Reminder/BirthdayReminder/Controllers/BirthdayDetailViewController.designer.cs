@@ -7,8 +7,8 @@ using MonoTouch.Foundation;
 
 namespace BirthdayReminder
 {
-	[Register ("DetailViewController")]
-	partial class DetailViewController
+	[Register ("BirthdayDetailViewController")]
+	partial class BirthdayDetailViewController
 	{
 		[Outlet]
 		MonoTouch.UIKit.UILabel detailDescriptionLabel { get; set; }

@@ -86,23 +86,25 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="RootViewController.cs" />
-    <Compile Include="RootViewController.designer.cs">
-      <DependentUpon>RootViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailViewController.cs" />
-    <Compile Include="DetailViewController.designer.cs">
-      <DependentUpon>DetailViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Birthday.cs" />
     <Compile Include="Models\BirthdayRepository.cs" />
+    <Compile Include="Controllers\BirthdayListViewController.designer.cs">
+      <DependentUpon>Controllers\BirthdayListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BirthdayDetailViewController.designer.cs">
+      <DependentUpon>Controllers\BirthdayDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BirthdayDetailViewController.cs" />
+    <Compile Include="Controllers\BirthdayListViewController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="RootViewController.xib" />
-    <InterfaceDefinition Include="DetailViewController.xib" />
+    <InterfaceDefinition Include="Views\BirthdayDetailViewController.xib" />
+    <InterfaceDefinition Include="Views\BirthdayListViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 </Project>

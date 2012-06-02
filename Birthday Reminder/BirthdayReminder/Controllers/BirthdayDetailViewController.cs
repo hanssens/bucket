@@ -7,11 +7,11 @@ using MonoTouch.UIKit;
 
 namespace BirthdayReminder
 {
-	public partial class DetailViewController : UIViewController
+	public partial class BirthdayDetailViewController : UIViewController
 	{
 		Birthday birthDay;
 		
-		public DetailViewController (Birthday currentBirthday) : base ("DetailViewController", null)
+		public BirthdayDetailViewController (Birthday currentBirthday) : base ("BirthdayDetailViewController", null)
 		{
 			// BUG: It seems detailDescriptionLabel isn't initialized at startup?
 			//detailDescriptionLabel = new UILabel();
