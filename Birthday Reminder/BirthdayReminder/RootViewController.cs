@@ -86,19 +86,11 @@ namespace BirthdayReminder
 			// Customize the appearance of table view cells.
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 			{
-				
-				
 				var cell = tableView.DequeueReusableCell (cellIdentifier);
 				if (cell == null) {
 					cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 					cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				}
-				
-				// Configure the cell.
-				//cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString (
-				//	"Detail1",
-				//	"Detail2"
-				//);
 				
 				var currentBirthday = _Birthdays[indexPath.Row];
 				cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString(
