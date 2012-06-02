@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
@@ -8,6 +10,7 @@ namespace BirthdayReminder
 {
 	public partial class RootViewController : UITableViewController
 	{
+		
 		public RootViewController () : base ("RootViewController", null)
 		{
 			// Custom initialization
@@ -53,9 +56,19 @@ namespace BirthdayReminder
 			static NSString cellIdentifier = new NSString ("CellId");
 			RootViewController controller;
 
+			public List<Birthday> _Birthdays {
+				get;
+				set;
+			}
+			
 			public DataSource (RootViewController controller)
 			{
 				this.controller = controller;
+				
+				using (var repository = new BirthdayRepository())
+				{
+					_Birthdays = repository.Birthdays.ToList();
+				}
 			}
 			
 			// Customize the number of sections in the table view.
@@ -66,12 +79,15 @@ namespace BirthdayReminder
 			
 			public override int RowsInSection (UITableView tableview, int section)
 			{
-				return 1;
+				var rowCount = _Birthdays.Count();
+				return rowCount;
 			}
 			
 			// Customize the appearance of table view cells.
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 			{
+				
+				
 				var cell = tableView.DequeueReusableCell (cellIdentifier);
 				if (cell == null) {
 					cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -79,9 +95,15 @@ namespace BirthdayReminder
 				}
 				
 				// Configure the cell.
-				cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString (
-					"Detail",
-					"Detail"
+				//cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString (
+				//	"Detail1",
+				//	"Detail2"
+				//);
+				
+				var currentBirthday = _Birthdays[indexPath.Row];
+				cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString(
+					currentBirthday.Name,
+					currentBirthday.Name
 				);
 				
 				return cell;
@@ -126,11 +148,16 @@ namespace BirthdayReminder
 			*/
 			
 			public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
-			{
-				var DetailViewController = new DetailViewController ();
+			{	
+				// Fetch the selected item from the list of _Birthdays
+				var model = _Birthdays[indexPath.Row];
+				
+				// ... and inject it into a new DetailViewController instance
+				var detailController = new DetailViewController (model);
+				
 				// Pass the selected object to the new view controller.
 				controller.NavigationController.PushViewController (
-					DetailViewController,
+					detailController,
 					true
 				);
 			}

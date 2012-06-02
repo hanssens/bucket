@@ -9,28 +9,25 @@ namespace BirthdayReminder
 {
 	public partial class DetailViewController : UIViewController
 	{
-		object detailItem;
+		Birthday birthDay;
 		
-		public DetailViewController () : base ("DetailViewController", null)
+		public DetailViewController (Birthday currentBirthday) : base ("DetailViewController", null)
 		{
-			// Custom initialization
-		}
-		
-		public void SetDetailItem (object newDetailItem)
-		{
-			if (detailItem != newDetailItem) {
-				detailItem = newDetailItem;
-				
-				// Update the view
-				ConfigureView ();
-			}
+			// BUG: It seems detailDescriptionLabel isn't initialized at startup?
+			//detailDescriptionLabel = new UILabel();
+			//detailDescriptionLabel.Text = "WOOT";
+			
+			birthDay = currentBirthday;
+			ConfigureView ();
 		}
 		
 		void ConfigureView ()
 		{
 			// Update the user interface for the detail item
-			if (detailItem != null)
-				detailDescriptionLabel.Text = detailItem.ToString ();
+			//if (detailItem != null)
+			//	detailDescriptionLabel.Text = detailItem.ToString ();
+			
+			// Custom note: Well, that doesn't work if the view hasn't been initialized yet
 		}
 		
 		public override void DidReceiveMemoryWarning ()
@@ -46,6 +43,9 @@ namespace BirthdayReminder
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+			
+			// Bind and update properties
+			detailDescriptionLabel.Text = "Verjaardag: " + birthDay.Name;
 		}
 		
 		public override void ViewDidUnload ()
