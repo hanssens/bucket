@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4A40E05-540D-45F9-83E2-2798E631FC8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntityFrameworkPerformanceTests.DatabaseFirst</RootNamespace>
+    <AssemblyName>EntityFrameworkPerformanceTests.DatabaseFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\Address.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\AddressType.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\AWBuildVersion.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BillOfMaterial.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BusinessEntity.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BusinessEntityAddress.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BusinessEntityContact.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ContactType.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CountryRegion.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CountryRegionCurrency.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CreditCard.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Culture.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Currency.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CurrencyRate.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Customer.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\DatabaseFirstDataContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstDataContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\DatabaseFirstDataContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\DatabaseFirstDataContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFirstDataContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\DatabaseLog.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Department.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmailAddress.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Employee.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeDepartmentHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeePayHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ErrorLog.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Illustration.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\JobCandidate.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Location.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Password.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Person.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PersonCreditCard.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PersonPhone.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PhoneNumberType.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Product.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductCategory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductCostHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductDescription.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductDocument.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductInventory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductListPriceHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductModel.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductModelIllustration.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductModelProductDescriptionCulture.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductPhoto.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductProductPhoto.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductReview.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductSubcategory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductVendor.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PurchaseOrderDetail.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PurchaseOrderHeader.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesOrderDetail.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesOrderHeader.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesOrderHeaderSalesReason.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesPerson.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesPersonQuotaHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesReason.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesTaxRate.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesTerritory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SalesTerritoryHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ScrapReason.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Shift.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ShipMethod.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ShoppingCartItem.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SpecialOffer.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\SpecialOfferProduct.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StateProvince.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Store.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TransactionHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TransactionHistoryArchive.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\UnitMeasure.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vAdditionalContactInfo.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vEmployee.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vEmployeeDepartment.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vEmployeeDepartmentHistory.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Vendor.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vIndividualCustomer.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vJobCandidate.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vJobCandidateEducation.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vJobCandidateEmployment.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vPersonDemographic.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vProductAndDescription.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vProductModelCatalogDescription.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vProductModelInstruction.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vSalesPerson.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vSalesPersonSalesByFiscalYear.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vStateProvinceCountryRegion.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vStoreWithAddress.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vStoreWithContact.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vStoreWithDemographic.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vVendorWithAddress.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\vVendorWithContact.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WorkOrder.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WorkOrderRouting.cs">
+      <DependentUpon>DatabaseFirstDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DataModel\DatabaseFirstDataContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseFirstDataContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\DatabaseFirstDataContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseFirstDataContext.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFirstDataContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModel\DatabaseFirstDataContext.edmx.diagram">
+      <DependentUpon>DatabaseFirstDataContext.edmx</DependentUpon>
+    </None>
+    <None Include="DataModel\DatabaseFirstDataContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseFirstDataContext.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFirstDataContext.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A371E55-CB53-4726-B803-B1BBA702E437}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntityFrameworkPerformanceTests.CodeFirst</RootNamespace>
+    <AssemblyName>EntityFrameworkPerformanceTests.CodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\Address.cs" />
+    <Compile Include="DataModel\AddressType.cs" />
+    <Compile Include="DataModel\AWBuildVersion.cs" />
+    <Compile Include="DataModel\BillOfMaterial.cs" />
+    <Compile Include="DataModel\BusinessEntity.cs" />
+    <Compile Include="DataModel\BusinessEntityAddress.cs" />
+    <Compile Include="DataModel\BusinessEntityContact.cs" />
+    <Compile Include="DataModel\CodeFirstDataContext.cs" />
+    <Compile Include="DataModel\ContactType.cs" />
+    <Compile Include="DataModel\CountryRegion.cs" />
+    <Compile Include="DataModel\CountryRegionCurrency.cs" />
+    <Compile Include="DataModel\CreditCard.cs" />
+    <Compile Include="DataModel\Culture.cs" />
+    <Compile Include="DataModel\Currency.cs" />
+    <Compile Include="DataModel\CurrencyRate.cs" />
+    <Compile Include="DataModel\Customer.cs" />
+    <Compile Include="DataModel\DatabaseLog.cs" />
+    <Compile Include="DataModel\Department.cs" />
+    <Compile Include="DataModel\EmailAddress.cs" />
+    <Compile Include="DataModel\Employee.cs" />
+    <Compile Include="DataModel\EmployeeDepartmentHistory.cs" />
+    <Compile Include="DataModel\EmployeePayHistory.cs" />
+    <Compile Include="DataModel\ErrorLog.cs" />
+    <Compile Include="DataModel\Illustration.cs" />
+    <Compile Include="DataModel\JobCandidate.cs" />
+    <Compile Include="DataModel\Location.cs" />
+    <Compile Include="DataModel\Password.cs" />
+    <Compile Include="DataModel\Person.cs" />
+    <Compile Include="DataModel\PersonCreditCard.cs" />
+    <Compile Include="DataModel\PersonPhone.cs" />
+    <Compile Include="DataModel\PhoneNumberType.cs" />
+    <Compile Include="DataModel\Product.cs" />
+    <Compile Include="DataModel\ProductCategory.cs" />
+    <Compile Include="DataModel\ProductCostHistory.cs" />
+    <Compile Include="DataModel\ProductDescription.cs" />
+    <Compile Include="DataModel\ProductDocument.cs" />
+    <Compile Include="DataModel\ProductInventory.cs" />
+    <Compile Include="DataModel\ProductListPriceHistory.cs" />
+    <Compile Include="DataModel\ProductModel.cs" />
+    <Compile Include="DataModel\ProductModelIllustration.cs" />
+    <Compile Include="DataModel\ProductModelProductDescriptionCulture.cs" />
+    <Compile Include="DataModel\ProductPhoto.cs" />
+    <Compile Include="DataModel\ProductProductPhoto.cs" />
+    <Compile Include="DataModel\ProductReview.cs" />
+    <Compile Include="DataModel\ProductSubcategory.cs" />
+    <Compile Include="DataModel\ProductVendor.cs" />
+    <Compile Include="DataModel\PurchaseOrderDetail.cs" />
+    <Compile Include="DataModel\PurchaseOrderHeader.cs" />
+    <Compile Include="DataModel\SalesOrderDetail.cs" />
+    <Compile Include="DataModel\SalesOrderHeader.cs" />
+    <Compile Include="DataModel\SalesOrderHeaderSalesReason.cs" />
+    <Compile Include="DataModel\SalesPerson.cs" />
+    <Compile Include="DataModel\SalesPersonQuotaHistory.cs" />
+    <Compile Include="DataModel\SalesReason.cs" />
+    <Compile Include="DataModel\SalesTaxRate.cs" />
+    <Compile Include="DataModel\SalesTerritory.cs" />
+    <Compile Include="DataModel\SalesTerritoryHistory.cs" />
+    <Compile Include="DataModel\ScrapReason.cs" />
+    <Compile Include="DataModel\Shift.cs" />
+    <Compile Include="DataModel\ShipMethod.cs" />
+    <Compile Include="DataModel\ShoppingCartItem.cs" />
+    <Compile Include="DataModel\SpecialOffer.cs" />
+    <Compile Include="DataModel\SpecialOfferProduct.cs" />
+    <Compile Include="DataModel\StateProvince.cs" />
+    <Compile Include="DataModel\Store.cs" />
+    <Compile Include="DataModel\TransactionHistory.cs" />
+    <Compile Include="DataModel\TransactionHistoryArchive.cs" />
+    <Compile Include="DataModel\UnitMeasure.cs" />
+    <Compile Include="DataModel\vAdditionalContactInfo.cs" />
+    <Compile Include="DataModel\vEmployee.cs" />
+    <Compile Include="DataModel\vEmployeeDepartment.cs" />
+    <Compile Include="DataModel\vEmployeeDepartmentHistory.cs" />
+    <Compile Include="DataModel\Vendor.cs" />
+    <Compile Include="DataModel\vIndividualCustomer.cs" />
+    <Compile Include="DataModel\vJobCandidate.cs" />
+    <Compile Include="DataModel\vJobCandidateEducation.cs" />
+    <Compile Include="DataModel\vJobCandidateEmployment.cs" />
+    <Compile Include="DataModel\vPersonDemographic.cs" />
+    <Compile Include="DataModel\vProductAndDescription.cs" />
+    <Compile Include="DataModel\vProductModelCatalogDescription.cs" />
+    <Compile Include="DataModel\vProductModelInstruction.cs" />
+    <Compile Include="DataModel\vSalesPerson.cs" />
+    <Compile Include="DataModel\vSalesPersonSalesByFiscalYear.cs" />
+    <Compile Include="DataModel\vStateProvinceCountryRegion.cs" />
+    <Compile Include="DataModel\vStoreWithAddress.cs" />
+    <Compile Include="DataModel\vStoreWithContact.cs" />
+    <Compile Include="DataModel\vStoreWithDemographic.cs" />
+    <Compile Include="DataModel\vVendorWithAddress.cs" />
+    <Compile Include="DataModel\vVendorWithContact.cs" />
+    <Compile Include="DataModel\WorkOrder.cs" />
+    <Compile Include="DataModel\WorkOrderRouting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
